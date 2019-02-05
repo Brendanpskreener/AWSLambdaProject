@@ -4,6 +4,13 @@ const header = {
   'Content-Type': 'application/json'
 }
 
+/**
+ * returns a header, status, and body for a successful response
+ *
+ * @param {*} body
+ * @param {number} [statusCode=200]
+ * @returns
+ */
 function successResponse(body, statusCode = 200) {
   logger.info({
     body,

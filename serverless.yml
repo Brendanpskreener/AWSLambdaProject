@@ -1,0 +1,22 @@
+service: word-reverser
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs8.10
+package:
+  include:
+    - node_modules/**
+functions:
+  wordReverser:
+    handler: src/handlers/wordReverser.handler
+    events:
+      - http:
+          path: /reverse/{word}
+          method: get
+  imageResizer:
+    handler: src/handlers/imageResizer.handler
+    events:
+      - http:
+          path: /reverse/{word}
+          method: get
+
